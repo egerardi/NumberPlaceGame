@@ -29,6 +29,7 @@ public class Framework {
 	private String solution;
 	private Algorithm algorithm;
 	private JButton buttonCheckIfCorrect;
+	private JLabel gameboard;
 	
 	public Framework () {
 		algorithm = new Algorithm();
@@ -53,6 +54,7 @@ public class Framework {
 		addBackground();
 		addHeader();
 		addGameboard();
+		addGameboardBorders();
 		addLabelText();
 		addStartButton();
 		addCheckIfCorrectButton();
@@ -76,7 +78,7 @@ public class Framework {
 	
 	private void addGameboard() {
         //Gameboard
-        JLabel gameboard = new JLabel();
+        gameboard = new JLabel();
 //        gameboard.setBackground(Color.WHITE);
 //        gameboard.setOpaque(true);
 //        gameboard.setBorder( BorderFactory.createLineBorder(Color.black) );
@@ -96,6 +98,37 @@ public class Framework {
 			}
 		}
 	}
+	
+	private void addGameboardBorders() {
+		//Vertical Border 1
+		JLabel labelBlackVerticalBorder = new JLabel();
+		labelBlackVerticalBorder.setBackground(Color.BLACK);
+		labelBlackVerticalBorder.setBounds(126,0,3,384);
+		labelBlackVerticalBorder.setOpaque(true);
+		gameboard.add(labelBlackVerticalBorder);
+		
+		//Vertical Border 2
+		JLabel labelBlackVerticalBorder2 = new JLabel();
+		labelBlackVerticalBorder2.setBackground(Color.BLACK);
+		labelBlackVerticalBorder2.setBounds(255,0,3,384);
+		labelBlackVerticalBorder2.setOpaque(true);
+		gameboard.add(labelBlackVerticalBorder2);
+		
+		//Horizontal Border 1
+		JLabel labelBlackHorizontalBorder = new JLabel();
+		labelBlackHorizontalBorder.setBackground(Color.BLACK);
+		labelBlackHorizontalBorder.setBounds(0,126,384,3);
+		labelBlackHorizontalBorder.setOpaque(true);
+		gameboard.add(labelBlackHorizontalBorder);
+		
+		//Horizontal Border 2
+		JLabel labelBlackHorizontalBorder2 = new JLabel();
+		labelBlackHorizontalBorder2.setBackground(Color.BLACK);
+		labelBlackHorizontalBorder2.setBounds(0,255,384,3);
+		labelBlackHorizontalBorder2.setOpaque(true);
+		gameboard.add(labelBlackHorizontalBorder2);
+	}
+	
         
 	private void addLabelText() {
         labelText = new JLabel("Welcome");
